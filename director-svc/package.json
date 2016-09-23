@@ -1,0 +1,21 @@
+{
+  "name": "simple_api",
+  "version": "1.0.0",
+  "description": "create a simple api",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "fakeredis": "^1.0.3",
+    "https": "^1.0.0",
+    "karma": "^1.1.2",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-phantomjs-launcher": "^1.0.1",
+    "karma-qunit": "^1.1.0",
+    "phantomjs": "^2.1.7",
+    "requirejs": "^2.2.0"
+  }
+}

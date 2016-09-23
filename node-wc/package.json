@@ -1,0 +1,36 @@
+{
+  "name": "node-wc",
+  "version": "0.0.1",
+  "description": "node-wc",
+  "main": "index.js",
+  "bin": {
+    "node-wc":"lib/node-wc.js"
+  },
+  "scripts": {
+    "test": "make test-all",
+    "blanket": { 
+      "pattern": "//^((?!(node_modules|test)).)*$/",
+      "data-cover-flags": {
+        "debug": false
+      }
+    }
+  },
+  "dependencies": {
+
+  },
+  "devDependencies": {
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:masubi/node-wc.git"
+  },
+  "keywords": [
+    "wc"
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "author": "masubi",
+  "license": "MIT"
+}
