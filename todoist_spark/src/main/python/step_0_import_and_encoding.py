@@ -72,7 +72,10 @@ df = df.withColumn('close_inbox', ohe_inbox_udf(col("close_project_raw")))
 df = df.drop("close_project_raw")
 
 #drop hours
-df = df.drop("close_hour").drop("open_hour").drop("close_day").drop("open_day")
+df = df.drop("close_hour").drop("open_hour")
+
+#drop days
+#df = df.drop("close_day").drop("open_day")
 
 #calculate duration of task
 df = df.withColumn('duration', datediff(col("close_date"),col("open_date")))
@@ -104,3 +107,8 @@ df = df.select([col(c).cast("double").alias(c) for c in df.columns])
 
 display(df)
 #df.printSchema()
+
+#
+#  split training and test data
+train, test = df.randomSplit([0.7, 0.3])
+print "We have %d training examples and %d test examples." % (train.count(), test.count())
