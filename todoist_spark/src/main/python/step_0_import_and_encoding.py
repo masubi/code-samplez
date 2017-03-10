@@ -1,9 +1,7 @@
 %python
 #
-#  v1 Import and Encoding
+#  v2 Import data and encode project OHE
 #
-
-
 from datetime import datetime
 from pyspark.sql.functions import col,udf,unix_timestamp,datediff
 from pyspark.sql.types import DateType, DoubleType, IntegerType
@@ -26,17 +24,64 @@ df = df.drop('close_Date_parsed2').drop('open_Date_parsed2')
 # Encode project columns
 def encodeProj(s):
   if s=='pt' or s=='diet' or s=='Corpore Sano' or s=='events': return 1
-  elif s=='Family/Friends': return 2
-  elif s=='Work' or s=='overhead' or s=='infiniteTag' or s=='prep' or s=='apps' or s=='Work' or s=='MensSana&Career': return 3
-  elif s=='PortfolioMgmt': return 4
-  elif s=='Errands': return 5
-  elif s=='Mentalhealth' or s=='Mens Sana' or "BleedingEdge" or "Honolulu": return 6
-  elif s=='Inbox': return 7
+  elif s=='Family/Friends': return 1
+  elif s=='Work' or s=='overhead' or s=='infiniteTag' or s=='prep' or s=='apps' or s=='Work' or s=='MensSana&Career': return 1
+  elif s=='PortfolioMgmt': return 1
+  elif s=='Errands': return 1
+  elif s=='Mentalhealth' or s=='Mens Sana' or "BleedingEdge" or "Honolulu": return 1
+  elif s=='Inbox': return 1
   else: return 0
 encodeUDF = udf(encodeProj, IntegerType())
-df = df.withColumn('open_project_encoded', encodeUDF(col("open_project_raw")))
+
+#
+# 1-HotEncode
+#
+def ohe_corpore_sano(proj):
+  if('pt' in proj or 'diet' in proj or 'events' in proj):return 1
+  else: return 0
+ohe_corpore_sano_udf = udf(ohe_corpore_sano, IntegerType())
+
+def ohe_work(proj):
+  if('Work' in proj or 'overhead' in proj or 'infiniteTag' in proj or 'apps' in proj or 'Work' in proj or 'MensSana&Career' in proj):return 1
+  else: return 0
+ohe_work_udf = udf(ohe_work, IntegerType())
+
+def ohe_family_friends(proj):
+  if('Family/Friends' in proj):return 1
+  else: return 0
+ohe_family_friends_udf = udf(ohe_family_friends, IntegerType())
+
+def ohe_mental_health(proj):
+  if('MentalHealth' in proj or 'Mens Sana' in proj or 'BleedingEdge' in proj or 'Travel' in proj):return 1
+  else: return 0
+ohe_mental_health_udf = udf(ohe_mental_health, IntegerType())
+
+def ohe_errands(proj):
+  if('Errands' in proj):return 1
+  else: return 0
+ohe_errands_udf = udf(ohe_errands, IntegerType())
+
+def ohe_inbox(proj):
+  if('Inbox' in proj):return 1
+  else: return 0
+ohe_inbox_udf = udf(ohe_inbox, IntegerType())
+
+# 1-HotEncode open_project_raw
+df = df.withColumn('open_corporesano', ohe_corpore_sano_udf(col("open_project_raw")))
+df = df.withColumn('open_work', ohe_work_udf(col("open_project_raw")))
+df = df.withColumn('open_family_friends', ohe_family_friends_udf(col("open_project_raw")))
+df = df.withColumn('open_mental_health', ohe_mental_health_udf(col("open_project_raw")))
+df = df.withColumn('open_errands', ohe_errands_udf(col("open_project_raw")))
+df = df.withColumn('open_inbox', ohe_inbox_udf(col("open_project_raw")))
 df = df.drop("open_project_raw")
-df = df.withColumn('close_project_encoded', encodeUDF(col("close_project_raw")))
+
+# 1-HotEncode close_project_raw
+df = df.withColumn('close_corporesano', ohe_corpore_sano_udf(col("close_project_raw")))
+df = df.withColumn('close_work', ohe_work_udf(col("close_project_raw")))
+df = df.withColumn('close_family_friends', ohe_family_friends_udf(col("close_project_raw")))
+df = df.withColumn('close_mental_health', ohe_mental_health_udf(col("close_project_raw")))
+df = df.withColumn('close_errands', ohe_errands_udf(col("close_project_raw")))
+df = df.withColumn('close_inbox', ohe_inbox_udf(col("close_project_raw")))
 df = df.drop("close_project_raw")
 
 #drop hours
