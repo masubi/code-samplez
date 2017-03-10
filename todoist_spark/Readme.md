@@ -21,11 +21,16 @@ predictive analytics on day-to-day tasks.
 
 Todoist data was organized into both open and closed events organized in a large csv w/ following header:
 
+```
 description, project, date/time, tags, priority, link to task w/ id
+```
 
 Example:
 
+```
 create readme,	Spark,	March 9, 2017 at 08:35AM, any,	Priority 2,	https://todoist.com/showTask?id=123
+
+```
 
 
 ## Run
