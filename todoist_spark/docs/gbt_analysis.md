@@ -72,7 +72,7 @@ For this analysis, this was ignored in favor of OHE.
 ![task_count_by_day](images/task_count_by_day.png)
 - Effect of priority on duration both predicted and actual(x-axis:  priority, y-axis:  duration):
 ![actual_and_predicted_duration_by_priority](images/actual_and_predicted_duration_by_priority.png)
-- Effect of incentivization on duration(x-axis:  open/close incentive, y-axis:  duration)
+- Effect of incentivization on duration(x-axis:  open/close incentive, y-axis:  duration):
 ![actual_and_predicted_duration_incentivized](images/actual_and_predicted_duration_incentivized.png)
 
 ## Conclusions
