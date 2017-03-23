@@ -67,7 +67,7 @@ For this analysis, this was ignored in favor of OHE.
 - 70/30 split training/test data
 
 ## Results
-- RMSE:  8% on tested data
+- RMSE:  8 days on test data
 - Number of tasks completed by day of week and priority:
 ![task_count_by_day](images/task_count_by_day.png)
 - Effect of priority on duration both predicted and actual(x-axis:  priority, y-axis:  duration):
