@@ -1,0 +1,7 @@
+{
+  "name": "Simple Health Data api Heroku: Node.js",
+  "description": "node.js using Express 4",
+  "repository": "https://github.com/masubi/code-samplez",
+  "keywords": ["node", "express", "heroku"],
+  "image": "heroku/nodejs"
+}

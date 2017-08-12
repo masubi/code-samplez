@@ -1,0 +1,28 @@
+{
+  "name": "health_data_api",
+  "version": "0.2.6",
+  "description": "A sample Node.js app using Express 4",
+  "engines": {
+    "node": "6.11.1"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test.js"
+  },
+  "devDependencies": {
+    "ejs": "2.5.6",
+    "express": "4.15.2",
+    "pg":"6.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/masubi/code-samplez"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
+}
