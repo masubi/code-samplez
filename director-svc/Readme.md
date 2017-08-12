@@ -3,7 +3,7 @@ director-svc
 
 ## Description
 
-Simple api for registering directors, updating thier information, and listing registered directors.  
+Simple api for registering directors, updating their information, and listing registered directors.
 The create and modify api endpoints will first authenticate against livestream api to check that a livestream_id 
 correctly exists.
 
