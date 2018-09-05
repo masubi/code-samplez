@@ -10,9 +10,9 @@ Set of code snippets for fun and demo purpose:
 - [Sentiment Engine](https://github.com/masubi/sentiment): Training a sentiment engine
   - [discussion/analysis](https://github.com/masubi/sentiment/blob/master/docs/details.md)
 - [Monad Presentation](https://github.com/masubi/monad_presentation/blob/master/src/main/scala/proj/Monad.scala):  given early 2018
-- [Snack Defender 2000 src](https://github.com/masubi/SnackDefender):  addresses serious deficiencies in snack security
+- [Snack Defender 2000](https://github.com/masubi/SnackDefender):  address serious deficiencies in snack security
   - experiment w/ Adafruit huzzah ESP8266
-- [jcors proxy server src](https://github.com/masubi/jcors): proxy server for adding cors headers on http requests.  quick hack for those tough
+- [jcors proxy server](https://github.com/masubi/jcors): proxy server for adding cors headers on http requests.  quick hack for those tough
   to reach services
 - [node-wc src](https://github.com/masubi/code-samplez/tree/master/node-wc): fun little word count in node
 
