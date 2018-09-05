@@ -4,33 +4,17 @@ Code Snippets
 ## Description
 Set of code snippets for fun and demo purpose:
 
-- Gradient Boosted Trees Experiment w/ Spark
-  - desc: experiment w/ GBT
-  - [todoist_spark src](https://github.com/masubi/code-samplez/tree/master/todoist_spark)
+- [Gradient Boosted Trees Experiment w/ Spark](https://github.com/masubi/code-samplez/tree/master/todoist_spark)
+  - Trained a GBT w/ todoist data to see if can train a on correlation to predict task completion time
   - [analysis/results](https://github.com/masubi/code-samplez/blob/master/todoist_spark/docs/gbt_analysis.md)
-
-- Sentiment Analysis
-  - desc:  training a sentiment engine
-  - [twitter sentiment engine src](https://github.com/masubi/sentiment)
+- [Sentiment Engine](https://github.com/masubi/sentiment): Training a sentiment engine
   - [discussion/analysis](https://github.com/masubi/sentiment/blob/master/docs/details.md)
-
-- Monad Presentation
-  - desc:  src code for presentation given early 2018
-  - [monad src](https://github.com/masubi/monad_presentation/blob/master/src/main/scala/proj/Monad.scala)
-
-- Snack Defender 2000
-  - desc: address serious deficiencies in snack security.  embedded proof of concept
-  - [Snack Defender 2000 src](https://github.com/masubi/SnackDefender)
-
-- jcors
-  - desc:  proxy server for adding cors headers on http requests.  quick hack for those tough
+- [Monad Presentation](https://github.com/masubi/monad_presentation/blob/master/src/main/scala/proj/Monad.scala):  given early 2018
+- [Snack Defender 2000 src](https://github.com/masubi/SnackDefender):  addresses serious deficiencies in snack security
+  - experiment w/ Adafruit huzzah ESP8266
+- [jcors proxy server src](https://github.com/masubi/jcors): proxy server for adding cors headers on http requests.  quick hack for those tough
   to reach services
-  - [jcors proxy server src](https://github.com/masubi/jcors)
-
-- wc
-  - desc:  fun little word count in node
-  - [node-wc src](https://github.com/masubi/code-samplez/tree/master/node-wc)
-
+- [node-wc src](https://github.com/masubi/code-samplez/tree/master/node-wc): fun little word count in node
 
 ## License
 
